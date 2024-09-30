@@ -12,22 +12,20 @@
 <body>
     <h1>Cubist-style image effects with decision trees</h1>
     
-    <p>In summer 2024, I spent an internship in the Machine Learning research group of Prof. <a href="https://faculty.ucmerced.edu/mcarreira-perpinan">M. Á. Carreira-Perpiñán</a> at the University of California, Merced. Prof. Carreira-Perpi��n has developed an algorithm, <a href="https://faculty.ucmerced.edu/mcarreira-perpinan/research/TAO.html">Tree Alternating Optimization (TAO)</a>, to learn decision trees from data. The goal of my project was to use TAO to manipulate images for artistic purposes, specifically to restyle an input image so it looks like a <a href="https://en.wikipedia.org/wiki/Cubism">cubist painting</a>. The result of my work appeared in the following paper:</p>
+    <p>In summer 2024, I spent an internship in the Machine Learning research group of Prof. <a href="https://faculty.ucmerced.edu/mcarreira-perpinan">Miguel Á. Carreira-Perpiñán</a> at the University of California, Merced. Prof. Carreira-Perpiñán has developed an algorithm, <a href="https://faculty.ucmerced.edu/mcarreira-perpinan/research/TAO.html">Tree Alternating Optimization (TAO)</a>, to learn decision trees from data. The goal of my project was to use TAO to manipulate images for artistic purposes, specifically to restyle an input image so it looks like a <a href="https://en.wikipedia.org/wiki/Cubism">cubist painting</a>. The result of my work appeared in the following paper:</p>
 <ul>
 <li>E. Chan, M. Gabidolla and M. Á. Carreira-Perpiñán: <a href="cubist-TAO/baylearn2024.pdf">"Cubist-style image effects with oblique decision trees”</a>. <a href="https://baylearn-org.github.io/www"><em>Bay Area Machine Learning Symposium (BayLearn 2024)</em></a>, Apple, Cupertino, Oct. 10, 2024.</li>
 </ul>
 <p>You can see lots of examples (images and videos) in the <a href="art-gallery.html">cubist TAO art gallery</a>. In this web page, I give an overview of the project. For more details, see the above paper.</p>
 
-<p>A machine learning regression model is a parametric mathematical function <i>f</i> trained on a dataset of inputs <i>x</i> and corresponding outputs <i>y</i> so that the function maps inputs to outputs as best as possible: <i>y &#8773; f(x)</i>. In our case, the inputs are the pixel locations of the image, the outputs are the pixel colors, and the function is an oblique decision tree. An oblique decision tree partitions the image hierarchically into polygonal regions and assigns a contant color to each region. Such a tree can be learned from the image using the TAO algorithm. Instead of a single tree, we can use several trees (a decision forest) to create an even finer partition. The resulting, new image predicted by the tree or forest is made up of polygons each with a different color, and the polygons and their color are optimized to match the original image. The process is described in this figure:</p>
-<img src="fig1.gif">
+<p>A machine learning regression model is a parametric mathematical function <i>f</i> trained on a dataset of inputs <i>x</i> and corresponding outputs <i>y</i> so that the function maps inputs to outputs as best as possible: <i>y ≈ f(x)</i>. In our case, the inputs are the pixel locations of the image, the outputs are the pixel colors, and the function is an oblique decision tree. An oblique decision tree partitions the image hierarchically into polygonal regions and assigns a contant color to each region. Such a tree can be learned from the image using the TAO algorithm. Instead of a single tree, we can use several trees (a decision forest) to create an even finer partition. The resulting, new image predicted by the tree or forest is made up of polygons each with a different color, and the polygons and their color are optimized to match the original image. The process is described in this figure:</p>
+<img src="fig1.jpg">
 
-<p>We can control the appearance of the result by changing the depth of the tree &delta; (a tree of depth &delta; creates 2<sup>^&delta;</sup> regions), the number of trees <i>T</i>, the random seed of TAO (which creates a different result each time) and the number of training iterations of TAO (usually 5 to 10 are enough).</p>
+<p>We can control the appearance of the result by changing the depth of the tree &Delta; (a tree of depth &Delta; creates 2<sup>&Delta;</sup> regions), the number of trees <i>T</i>, the random seed of TAO (which creates a different result each time) and the number of training iterations of TAO (usually 5 to 10 are enough).</p>
 
 <p>Here is an example:</p>
-<img src="fig3.gif">
-
-<p>There a lots more in the <a href="art-gallery.html">cubist TAO art gallery</a>. Zoom into the images to see individual polygons.</p>
-
+<img src="fig3.png">
+    <p>Here is another one:</p>
     <p>
     <table border="0" cellspacing="0">
       <tbody>
@@ -47,11 +45,9 @@
 	</tr>
       </tbody>
     </table>
-    
     </p>
-
+    <p>There a lots more in the <a href="art-gallery.html">cubist TAO art gallery</a>. Zoom into the images to see individual polygons.</p>
     <hr>
-    <img src="5f5bfd6717cc6a75989fd0faa10b501.jpg">
     <address>
        Edric Chan
     </address>
