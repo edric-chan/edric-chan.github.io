@@ -11,46 +11,47 @@
 </head>
 <body>
     <h1>Cubist-style image effects with decision trees</h1>
-    
+
     <p>In summer 2024, I spent an internship in the Machine Learning research group of Prof. <a href="https://faculty.ucmerced.edu/mcarreira-perpinan">Miguel Á. Carreira-Perpiñán</a> at the University of California, Merced. Prof. Carreira-Perpiñán has developed an algorithm, <a href="https://faculty.ucmerced.edu/mcarreira-perpinan/research/TAO.html">Tree Alternating Optimization (TAO)</a>, to learn decision trees from data. The goal of my project was to use TAO to manipulate images for artistic purposes, specifically to restyle an input image so it looks like a <a href="https://en.wikipedia.org/wiki/Cubism">cubist painting</a>. The result of my work appeared in the following paper:</p>
-<ul>
-<li>E. Chan, M. Gabidolla and M. Á. Carreira-Perpiñán: <a href="baylearn2024.pdf">"Cubist-style image effects with oblique decision trees”</a>. <a href="https://baylearn-org.github.io/www"><em>Bay Area Machine Learning Symposium (BayLearn 2024)</em></a>, Apple, Cupertino, Oct. 10, 2024.</li>
-</ul>
-<p>You can see lots of examples (images and videos) in the <a href="art-gallery.html">cubist TAO art gallery</a>. In this web page, I give an overview of the project. For more details, see the above paper.</p>
+    <ul>
+        <li>E. Chan, M. Gabidolla and M. Á. Carreira-Perpiñán: "Cubist-style image effects with oblique decision trees”. <a href="https://baylearn-org.github.io/www"><em>Bay Area Machine Learning Symposium (BayLearn 2024)</em></a>, Apple, Cupertino, Oct. 10, 2024. <a href="baylearn2024.pdf">[paper PDF]</a> <a href="baylearn-poster.pdf">[poster PDF]</a></li>
+    </ul>
+    <p>You can see lots of examples (images and videos) in the <a href="art-gallery.html">cubist TAO art gallery</a>. In this web page, I give an overview of the project. For more details, see the above paper.</p>
 
-<p>A machine learning regression model is a parametric mathematical function <i>f</i> trained on a dataset of inputs <i>x</i> and corresponding outputs <i>y</i> so that the function maps inputs to outputs as best as possible: <i>y ≈ f(x)</i>. In our case, the inputs are the pixel locations of the image, the outputs are the pixel colors, and the function is an oblique decision tree. An oblique decision tree partitions the image hierarchically into polygonal regions and assigns a contant color to each region. Such a tree can be learned from the image using the TAO algorithm. Instead of a single tree, we can use several trees (a decision forest) to create an even finer partition. The resulting, new image predicted by the tree or forest is made up of polygons each with a different color, and the polygons and their color are optimized to match the original image. The process is described in this figure:</p>
-<img src="fig1.jpg">
+    <p>A machine learning regression model is a parametric mathematical function <i>f</i> trained on a dataset of inputs <i>x</i> and corresponding outputs <i>y</i> so that the function maps inputs to outputs as best as possible: <i>y ≈ f(x)</i>. In our case, the inputs are the pixel locations of the image, the outputs are the pixel colors, and the function is an oblique decision tree. An oblique decision tree partitions the image hierarchically into polygonal regions and assigns a contant color to each region. Such a tree can be learned from the image using the TAO algorithm. Instead of a single tree, we can use several trees (a decision forest) to create an even finer partition. The resulting, new image predicted by the tree or forest is made up of polygons each with a different color, and the polygons and their color are optimized to match the original image. The process is described in this figure:</p>
+    <img src="fig1.jpg">
 
-<p>We can control the appearance of the result by changing the depth of the tree &Delta; (a tree of depth &Delta; creates 2<sup>&Delta;</sup> regions), the number of trees <i>T</i>, the random seed of TAO (which creates a different result each time) and the number of training iterations of TAO (usually 5 to 10 are enough).</p>
+    <p>We can control the appearance of the result by changing the depth of the tree &Delta; (a tree of depth &Delta; creates 2<sup>&Delta;</sup> regions), the number of trees <i>T</i>, the random seed of TAO (which creates a different result each time) and the number of training iterations of TAO (usually 5 to 10 are enough).</p>
 
-<p>Here is an example:</p>
-<img src="fig3.png">
+    <p>Here is an example:</p>
+    <img src="fig3.png">
     <p>Here is another one:</p>
     <p>
-    <table border="0" cellspacing="0">
-      <tbody>
-	<tr>
-	  <!-- Left side with 3 horizontal images -->
-	  <td align="left">
-	    <img src="einstein_depth_9_T_1_FI_5_seed_222283.jpg" style="height: 384px; width: 312px;">
-	    <img src="einstein_depth_10_T_1_FI_5_seed_222283.jpg" style="height: 384px; width: 312px; margin-left: 20px;">
-	    <img src="einstein_depth_11_T_1_FI_5_seed_222283.jpg" style="height: 384px; width: 312px; margin-left: 20px;">
-	  </td>
-	  
-	  <!-- Right side with 2 vertical images, with margin between them and the left images -->
-	  <td align="left" style="padding-left: 20px;">
-	    <img src="goldengate_depth_11_T_1_FI_10_seed_29.jpg" style="height: 180px; width: 261px; display: block; margin-bottom: 10px;">
-	    <img src="japanwave_depth_9_T_2_FI_4_seed_20.jpg" style="height: 180px; width: 261px; display: block; margin-top: 20px;">
-	  </td>
-	</tr>
-      </tbody>
-    </table>
+        <table border="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <!-- Left side with 3 horizontal images -->
+                    <td align="left">
+                        <img src="einstein_depth_9_T_1_FI_5_seed_222283.jpg" style="height: 384px; width: 312px;">
+                        <img src="einstein_depth_10_T_1_FI_5_seed_222283.jpg" style="height: 384px; width: 312px; margin-left: 20px;">
+                        <img src="einstein_depth_11_T_1_FI_5_seed_222283.jpg" style="height: 384px; width: 312px; margin-left: 20px;">
+                    </td>
+
+                    <!-- Right side with 2 vertical images, with margin between them and the left images -->
+                    <td align="left" style="padding-left: 20px;">
+                        <img src="goldengate_depth_11_T_1_FI_10_seed_29.jpg" style="height: 180px; width: 261px; display: block; margin-bottom: 10px;">
+                        <img src="japanwave_depth_9_T_2_FI_4_seed_20.jpg" style="height: 180px; width: 261px; display: block; margin-top: 20px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </p>
     <p>There a lots more in the <a href="art-gallery.html">cubist TAO art gallery</a>. Zoom into the images to see individual polygons.</p>
     <hr>
     <address>
-       Edric Chan
+        Edric Chan
     </address>
-    <p>&nbsp;</p>
+    <p>Last modified: Sat Oct 5 21:34:04 PDT 2024</p>
+    <script type="text/javascript" src="//counter.websiteout.com/js/7/8/0/0"></script>
 </body>
 </html>
