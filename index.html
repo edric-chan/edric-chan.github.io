@@ -11,28 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b0d12;           /* page background */
-      --panel: #0f121a;        /* card background */
-      --muted: #a9b0c0;        /* secondary text */
-      --text: #e6e9f2;         /* primary text */
-      --brand: #79b8ff;        /* accent */
-      --brand-2: #9bffd1;      /* secondary accent */
-      --border: #1c2230;       /* subtle borders */
+      --bg: #0b0d12;
+      --panel: #0f121a;
+      --muted: #a9b0c0;
+      --text: #e6e9f2;
+      --brand: #79b8ff;
+      --brand-2: #9bffd1;
+      --border: #1c2230;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 18px;
     }
     html,body{height:100%}
     body{
-      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background: radial-gradient(1200px 800px at 20% -10%, rgba(121,184,255,.15), rgba(155,255,209,.06) 40%, transparent 70%), var(--bg);
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(121,184,255,.15), rgba(155,255,209,.06) 40%, transparent 70%), var(--bg);
       line-height:1.6;
     }
     a{color:var(--brand); text-decoration:none}
     a:hover{opacity:.9; text-decoration:underline}
     .wrap{max-width:1080px; margin:0 auto; padding:24px}
-    header.site{
-      display:grid; grid-template-columns:140px 1fr; gap:24px; align-items:center; margin-top:18px; margin-bottom:28px;
-    }
+    header.site{display:grid; grid-template-columns:140px 1fr; gap:24px; align-items:center; margin-top:18px; margin-bottom:28px;}
     .avatar{width:140px; height:140px; border-radius:50%; object-fit:cover; border:1px solid var(--border); box-shadow:var(--shadow)}
     .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border:1px solid var(--border); border-radius:999px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); color:var(--muted); font-size:.9rem}
     h1{font-size:2.2rem; line-height:1.2; margin:0 0 6px}
@@ -63,55 +62,44 @@
 </head>
 <body>
   <div class="wrap">
-
-    <!-- Header / Hero -->
     <header class="site">
       <img class="avatar" src="Edric.jpg" alt="Portrait of Edric Chan" />
       <div>
-        <div class="tag">📍 Pleasant Hill, CA &nbsp;•&nbsp; 🇺🇸</div>
+        <div class="tag">📍 Pleasant Hill, CA · 🇺🇸</div>
         <h1>Edric Chan</h1>
         <h2>Student at Diablo Valley College · AI & Data Science · Game Development</h2>
         <div class="links">
           <a class="btn" href="mailto:edric1106@gmail.com">✉️ Email</a>
-          <a class="btn" href="https://www.linkedin.com/in/edric-chan-181a31308" target="_blank" rel="noopener">🔗 LinkedIn</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">📄 CV</a>
+          <a class="btn" href="https://www.linkedin.com/in/edric-chan1106" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">📄 Resume</a>
         </div>
       </div>
     </header>
 
     <div class="grid" style="margin-bottom:20px">
-      <!-- About -->
       <section class="card">
         <h3>About</h3>
-        <p>
-          I’m an aspiring AI engineer exploring machine learning, data science, and game development. I like building visual tools and playful projects that connect algorithms with design. I also co‑founded the <strong>Asian‑Pacific Culture and Education Association (APCEA)</strong>, a nonprofit that supports youth education and cultural exchange.
-        </p>
+        <p>I’m an aspiring AI engineer exploring machine learning, data science, and game development. I like building visual tools and playful projects that connect algorithms with design. I also co‑founded the <strong>Asian‑Pacific Culture and Education Association (APCEA)</strong>, a nonprofit that supports youth education and cultural exchange.</p>
         <p class="meta">Hobbies: fencing, drums, chess, Go, and floor hockey.</p>
       </section>
 
-      <!-- Focus / Goals -->
       <section class="card">
         <h3>Current Focus & Goals</h3>
         <div class="two-col">
-          <p class="meta">• Coursework in Python, data analysis, and statistics (Data‑8 style labs).<br>
-          • Research: image processing, model interpretability, and generative workflows.<br>
-          • Game dev: visual novel tooling, character art pipelines, and Unity 2D systems.</p>
-          <p class="meta">• Short‑term: internships & research collaborations.<br>
-          • Long‑term: transfer to a 4‑year program in AI engineering, data science, or game design.</p>
+          <p class="meta">• Research: image processing, model interpretability, and generative workflows.<br>• Projects: visual novel tooling, character art pipelines, and AI art pipelines.</p>
+          <p class="meta">• Short‑term: internships & research collaborations.<br>• Long‑term: transfer to a 4‑year program in AI engineering, data science, or game design.</p>
         </div>
       </section>
     </div>
 
     <div class="grid">
-      <!-- Education -->
       <section class="card">
         <h3>Education</h3>
         <div class="edu-row"><div>Diablo Valley College</div><div class="meta">Pleasant Hill, CA · 2025—present</div></div>
-        <p class="meta">Courses include English 1000C, Intro to Data Science (COMSC‑156), Calculus (Math 192), and programming‑oriented labs. Active in peer learning and project‑based work.</p>
+        <p class=\"meta\">Clubs: Math Club · Cybersecurity Club</p>
         <div class="edu-row" style="margin-top:12px"><div>Great Oak High School</div><div class="meta">Temecula, CA · Graduated 2025</div></div>
       </section>
 
-      <!-- Publications -->
       <section class="card">
         <h3>Publications</h3>
         <ul class="clean">
@@ -129,60 +117,53 @@
     </div>
 
     <div class="grid" style="margin-top:20px">
-      <!-- Projects -->
       <section class="card">
         <h3>Projects</h3>
         <ul class="clean">
           <li>
             <div><strong>Tree‑based Cubist Stylization (TAO)</strong> <span class="pill">image processing</span> <span class="pill">research</span></div>
-            <div class="meta">Summer 2024 internship in Prof. <a href="https://faculty.ucmerced.edu/mcarreira-perpinan/" target="_blank" rel="noopener">Carreira‑Perpiñán’s</a> group (UC Merced). Built pipelines to transform images into cubist‑style vector segments via oblique decision trees and TAO optimization. .</div>
+            <div class="meta">Summer 2024 internship in Prof. <a href="https://faculty.ucmerced.edu/mcarreira-perpinan/" target="_blank" rel="noopener">Carreira‑Perpiñán’s</a> group (UC Merced). Built pipelines to transform images into cubist‑style vector segments via oblique decision trees and TAO optimization.</div>
           </li>
           <li>
-            <div><strong>DreamEupho Visual Novel</strong> <span class=\"pill\">2024—present</span> <span class=\"pill\">AI art</span> <span class=\"pill\">UI design</span></div>
-            <div class=\"meta\">Designing a visual novel inspired by <em>Sound! Euphonium</em>. Leading AI art generation for characters, backgrounds, and expressions.</div>
+            <div><strong>DreamEupho Visual Novel — AI Art & UI Design Lead</strong> <span class="pill">2024—present</span> <span class="pill">AI art</span> <span class="pill">UI design</span></div>
+            <div class="meta">Designing a visual novel inspired by <em>Sound! Euphonium</em>. Leading AI art generation for characters, backgrounds, and expressions.</div>
           </li>
         </ul>
       </section>
 
-      <!-- Involvement & Nonprofit -->
       <section class="card">
         <h3>Involvement</h3>
         <ul class="clean">
-          <li><strong>Clubs:</strong> Math Club; Cybersecurity Club.</li>
-          <li><strong>Nonprofit (APCEA):</strong> Co‑founder & CEO. We run youth‑led workshops and cultural exchange programs with a focus on accessibility and student leadership.</li>
+          
+          <li><strong>Nonprofit (APCEA):</strong> Co-founder & CEO. We run youth-led workshops, cultural exchange events, and education programs across the Asian-Pacific region. Our initiatives include language learning, cultural festivals, and mentorship for students interested in global collaboration. <a href='https://apcea.github.io/' target='_blank' rel='noopener'>Visit site</a></li>
         </ul>
       </section>
     </div>
 
-    <!-- Contact / CTA -->
     <section class="card" style="margin-top:20px">
       <h3>Open to Collaborations</h3>
-      <p class="meta">I’m interested in internships, research projects, and game development collaborations.</p>
+      <p class="meta">I’m interested in internships, research projects, and game development collaborations. Email is best for opportunities, project ideas, or speaking invites.</p>
       <div class="links">
         <a class="btn" href="mailto:edric1106@gmail.com">✉️ Contact Me</a>
-        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">📄 Download CV</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">📄 Download Resume</a>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div>&copy; <span id="year"></span> Edric Chan</div>
       <div>Last updated: <time id="last-updated" datetime=""></time></div>
-      <div style=\"margin-top:12px;font-size:0.9rem;color:var(--muted)\">Page Views: <span style=\"display:inline-block;min-width:50px;padding:2px 6px;border:1px solid var(--border);border-radius:6px;background:rgba(255,255,255,0.03)\"><script type=\"text/javascript\" src=\"//counter.websiteout.com/js/7/8/0/0\"></script></span></div>
+      <div style=\"margin-top:14px; font-size:0.9rem; color:var(--muted)\"><span style=\"padding:4px 10px; border:1px solid var(--border); border-radius:8px; background:rgba(255,255,255,0.04); display:inline-block; min-width:60px\"><script type=\"text/javascript\" src=\"//counter.websiteout.com/js/7/8/0/0\"></script></span></div>
     </footer>
-
   </div>
 
   <script>
-    // Footer dates
-    const y = document.getElementById('year');
-    const t = document.getElementById('last-updated');
-    const now = new Date();
-    y.textContent = now.getFullYear();
-    t.dateTime = now.toISOString();
-    const opts = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' };
-    t.textContent = now.toLocaleString(undefined, opts);
+    const y=document.getElementById('year');
+    const t=document.getElementById('last-updated');
+    const now=new Date();
+    y.textContent=now.getFullYear();
+    t.dateTime=now.toISOString();
+    const opts={year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit'};
+    t.textContent=now.toLocaleString(undefined,opts);
   </script>
 </body>
 </html>
-
